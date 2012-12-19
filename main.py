@@ -60,6 +60,8 @@ def getDisaster():
         'being pursued on foot by group'
         'being pursued in vehicle by vehicle'
         )
+    
+    return random.choice(disasters)
 
 def main():
     
@@ -78,6 +80,11 @@ def main():
     #print (recipient)
     
     sendText(subject, body, getCredentials(), recipient)
-    
+
+def runDebug():
+    print( getDisaster() )
+
+
 if __name__ == '__main__':
-    main()
+    #main()
+    runDebug()
