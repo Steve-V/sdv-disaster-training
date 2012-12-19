@@ -24,6 +24,7 @@ def sendText(subjectIn, message, credentials, recipient):
     subject = str(subjectIn)
     body = "" + str(message) + ""
     
+    # here 'recipient' must be a STRING
     headers = ["From: " + sender, "Subject: " + subject, "To: " + recipient, "MIME-Version: 1.0", "Content-Type: text/plain"]
     
     headers = "\r\n".join(headers)
@@ -35,6 +36,7 @@ def sendText(subjectIn, message, credentials, recipient):
     session.ehlo
     session.login(sender,password)
     
+    # here 'recipient' must be a LIST
     session.sendmail(sender, recipient, headers + "\r\n\r\n" + body)
     
     session.close()
