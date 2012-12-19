@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 
-def sendText(message, credentials):
+def getCredentials():
+    '''Get gmail login credentials'''
+
+    import pickle
+
+    with open('./PRIVATE/credentials','rb') as newCredentials:
+        credentials = pickle.loads(newCredentials.read())
+
+    return credentials
+
+def sendText(subjectIn, message, credentials, recipient):
     '''Send a text containing a message'''
     
     import smtplib
@@ -9,18 +19,10 @@ def sendText(message, credentials):
     SMTP_PORT = 587
     
     sender = credentials['login']
-    #recipient = credentials['phone']
-    #test email
-    recipient = "litwhistle@mailinator.com"
     password = credentials['password']
-    subject = 'SIMULATED'
     
-    from time import gmtime, strftime
-    timeNow = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-    
-    body = 'SIMULATED disaster drill at {}'.format(timeNow)
-    
-    body = "" + body + ""
+    subject = str(subjectIn)
+    body = "" + str(message) + ""
     
     headers = ["From: " + sender, "Subject: " + subject, "To: " + recipient, "MIME-Version: 1.0", "Content-Type: text/plain"]
     
