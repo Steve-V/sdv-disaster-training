@@ -119,7 +119,7 @@ def main():
     
     #recepients = getRecepients()
     
-    #recepients = ('litwhistle@mailinator.com')
+    recepients = ('litwhistle@mailinator.com')
     
     body = 'SIMULATED alert. Situation: {}. Your status: {}'.format( getDisaster(), getStatus() )
     
