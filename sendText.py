@@ -15,6 +15,16 @@ def getCredentials():
 
     return credentials
 
+def getRecepients():
+    '''Get recipients'''
+    
+    import pickle
+    
+    with open('./PRIVATE/recepients','rb') as newRecepients:
+        recepients = pickle.loads(newRecepients.read())
+
+    return recepients
+
 def sendText(subjectIn, message, credentials, recipient):
     '''Send a text containing a message'''
     

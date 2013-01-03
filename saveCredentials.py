@@ -18,6 +18,18 @@ def saveCredentials():
     with open('NEWcredentials','wb') as newFile:
         pickle.dump(newData,newFile)
 
+def saveCredentials():
+    '''Save recepients'''
+    
+    #this function for reference only
+    
+    import pickle
+    
+    recepients = ("phone@provider","email@provider","phone@provider")
+    
+    with open('NEWrecepients','wb') as newFile:
+        pickle.dump(recepients,newFile)
+
 
 if __name__ == '__main__':
     main()
