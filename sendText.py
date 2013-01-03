@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
 def getCredentials():
-    '''Get gmail login credentials'''
+    '''Get gmail login credentials
+    Format:
+    'login'    : 'USERNAME @ gmail.com',
+    'password' : 'PASSWORD',
+    'phone'    : 'PHONE NUMBER @ provider'
+    '''
 
     import pickle
 
