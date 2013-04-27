@@ -117,19 +117,26 @@ def main():
     
     subject = 'SIMULATED Alert'
     
-    #recepients = getRecepients()
+    recepients = getRecepients()
     
-    recepients = ('litwhistle@mailinator.com')
+    #recepients = ('litwhistle@mailinator.com')
     
     body = 'SIMULATED alert. Situation: {}. Your status: {}'.format( getDisaster(), getStatus() )
     
     print (body)
     
-    for eachRecepient in recepients:
-        sendText(subject, body, getCredentials(), eachRecepient)
+    #print (recepients[0])
+    
+    sendText(subject,body,getCredentials(),recepients[0])
+    
+    #for eachRecepient in recepients:
+        #print (eachRecepient)
+        #sendText(subject, body, getCredentials(), eachRecepient)
 
 def runDebug():
+    from sendText import getRecepients
     print( getRecepients() )
+    print( getRecepients()[0] )
 
 
 if __name__ == '__main__':
