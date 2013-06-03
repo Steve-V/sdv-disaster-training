@@ -110,9 +110,8 @@ def getStatus():
     #print(body)
     
     return(body)
-
-def main():
     
+def disaster():
     from sendText import sendText, getCredentials, getRecepients
     
     subject = 'SIMULATED Alert'
@@ -133,11 +132,38 @@ def main():
         #print (eachRecepient)
         #sendText(subject, body, getCredentials(), eachRecepient)
 
+def exits():
+    from sendText import sendText, getCredentials, getRecepients
+    
+    subject = 'Exits'
+    
+    recepients = getRecepients()
+    
+    #recepients = ('litwhistle@mailinator.com')
+    
+    body = 'Reminder: Nearest Exit?'
+    
+    print (body)
+    
+    #print (recepients[0])
+    
+    sendText(subject,body,getCredentials(),recepients[0])
+
 def runDebug():
     from sendText import getRecepients
     print( getRecepients() )
     print( getRecepients()[0] )
 
+def main():
+    
+    import random
+    if random.randint(1,4000) < 3999:
+        if random.randint(1,100) < 80:
+            exits()
+        else:
+            disaster()
+    else:
+        print("You got lucky this time")
 
 if __name__ == '__main__':
     main()
