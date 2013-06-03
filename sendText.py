@@ -10,7 +10,7 @@ def getCredentials():
 
     import pickle
 
-    with open('./PRIVATE/credentials','rb') as newCredentials:
+    with open('/home/steve/src/hg/disaster-training/PRIVATE/credentials','rb') as newCredentials:
         credentials = pickle.loads(newCredentials.read())
 
     return credentials
@@ -20,7 +20,7 @@ def getRecepients():
     
     import pickle
     
-    with open('./PRIVATE/recepients','rb') as newRecepients:
+    with open('/home/steve/src/hg/disaster-training/PRIVATE/recepients','rb') as newRecepients:
         recepients = pickle.loads(newRecepients.read())
 
     return recepients
