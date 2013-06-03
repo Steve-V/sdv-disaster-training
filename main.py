@@ -157,7 +157,7 @@ def runDebug():
 def main():
     
     import random
-    if random.randint(1,4000) < 3999:
+    if random.randint(1,4000) < 10:
         if random.randint(1,100) < 80:
             exits()
         else:
