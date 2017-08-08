@@ -112,51 +112,21 @@ def getStatus():
     return(body)
     
 def disaster():
-    from sendText import sendText, getCredentials, getRecepients
-    
-    subject = 'SIMULATED Alert'
-    
-    recepients = getRecepients()
-    
-    #recepients = ('litwhistle@mailinator.com')
-    
+    from sendText import telegramText
     body = 'SIMULATED alert. Situation: {}. Your status: {}'.format( getDisaster(), getStatus() )
-    
     print (body)
+    telegramText(body)
     
-    #print (recepients[0])
-    
-    sendText(subject,body,getCredentials(),recepients[0])
-    
-    #for eachRecepient in recepients:
-        #print (eachRecepient)
-        #sendText(subject, body, getCredentials(), eachRecepient)
-
 def exits():
-    from sendText import sendText, getCredentials, getRecepients
-    
-    subject = 'Exits'
-    
-    recepients = getRecepients()
-    
-    #recepients = ('litwhistle@mailinator.com')
-    
+    from sendText import telegramText
     body = 'Reminder: Nearest Exit?'
-    
-    print (body)
-    
-    #print (recepients[0])
-    
-    sendText(subject,body,getCredentials(),recepients[0])
+    telegramText(body)
 
-def runDebug():
-    from sendText import getRecepients
-    print( getRecepients() )
-    print( getRecepients()[0] )
 
 def main():
     
     import random
+
     if random.randint(1,4000) < 10:
         if random.randint(1,100) < 80:
             exits()
