@@ -127,7 +127,7 @@ def main():
     
     import random
 
-    if random.randint(1,4000) < 10:
+    if random.randint(1,4500) < 10:
         if random.randint(1,100) < 80:
             exits()
         else:
